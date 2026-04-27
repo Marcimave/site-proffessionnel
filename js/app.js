@@ -1,9 +1,3 @@
-const title = document.querySelector("h1");
-const text = title.textContent;
-
-title.innerHTML = "";
-
-let i = 0;
 
 document.getElementById("contactForm").addEventListener("submit", function(e) {
   e.preventDefault();
