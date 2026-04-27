@@ -29,3 +29,13 @@ Projet : ${message}`;
     document.getElementById("status").innerText = "❌ Envoi annulé";
   }
 });
+
+function choisirOffre(offre) {
+  const message = `Bonjour, je suis intéressé par l'offre ${offre}.`;
+
+  const phone = "241061234567"; // 🔴 ton numéro
+
+  const url = "https://wa.me/" + phone + "?text=" + encodeURIComponent(message);
+
+  window.open(url, "_blank");
+}
