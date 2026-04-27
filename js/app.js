@@ -5,26 +5,6 @@ title.innerHTML = "";
 
 let i = 0;
 
-function typing() {
-  if (i < text.length) {
-    const span = document.createElement("span");
-    span.textContent = text[i];
-
-    // garde les espaces visibles
-    if (text[i] === " ") {
-      span.innerHTML = "&nbsp;";
-    }
-
-    title.appendChild(span);
-    i++;
-    setTimeout(typing, 40);
-  }
-}
-
-typing();
-
-
-
 document.getElementById("contactForm").addEventListener("submit", function(e) {
   e.preventDefault();
 
