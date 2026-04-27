@@ -16,13 +16,15 @@ body {
   font-size: 40px;
 }
 
-
-@keyframes blink {
-  0% { opacity: 1; }
-  50% { opacity: 0.4; }
-  100% { opacity: 1; }
+.btn-cta {
+  animation: pulse 2s infinite;
 }
 
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
 
 /* SECTIONS */
 section {
@@ -313,16 +315,6 @@ button:hover {
   transform: scale(1.08);
 }
 
-.btn-cta {
-  animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.05); }
-  100% { transform: scale(1); }
-}
-
 .badge-limite {
   display: inline-block;
   background: red;
@@ -335,3 +327,8 @@ button:hover {
   animation: blink 1.2s infinite;
 }
 
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0.4; }
+  100% { opacity: 1; }
+}
