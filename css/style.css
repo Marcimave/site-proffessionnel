@@ -1,37 +1,84 @@
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background: #f4f4f4;
+  font-family: 'Arial', sans-serif;
+  background: #0f172a;
+  color: white;
+}
+
+/* HEADER */
+header {
+  padding: 80px 20px;
+  text-align: center;
+  background: linear-gradient(135deg, #2563eb, #7c3aed);
+}
+
+header h1 {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+header p {
+  font-size: 18px;
+  opacity: 0.9;
+}
+
+/* HERO */
+.hero {
+  padding: 60px 20px;
   text-align: center;
 }
 
-header {
-  background: #0d6efd;
-  color: white;
-  padding: 40px 20px;
+.hero h2 {
+  font-size: 30px;
 }
 
-.hero {
-  padding: 40px;
+.hero p {
+  opacity: 0.8;
+  margin-bottom: 20px;
 }
 
+/* BUTTON */
 .btn {
   display: inline-block;
-  background: #0d6efd;
+  padding: 15px 30px;
+  background: #22c55e;
   color: white;
-  padding: 15px 25px;
   text-decoration: none;
-  border-radius: 5px;
-  margin-top: 20px;
+  border-radius: 10px;
+  font-weight: bold;
+  transition: 0.3s;
 }
 
+.btn:hover {
+  background: #16a34a;
+  transform: scale(1.05);
+}
+
+/* SERVICES */
 .services {
-  background: white;
-  padding: 40px;
+  background: #1e293b;
+  padding: 60px 20px;
+  text-align: center;
 }
 
+.services h2 {
+  margin-bottom: 20px;
+}
+
+.services ul {
+  list-style: none;
+  padding: 0;
+}
+
+.services li {
+  padding: 10px;
+  font-size: 18px;
+}
+
+/* FOOTER */
 footer {
-  background: #222;
-  color: white;
+  text-align: center;
   padding: 20px;
+  background: #0b1220;
+  font-size: 14px;
 }
