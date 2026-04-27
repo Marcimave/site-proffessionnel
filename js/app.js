@@ -56,7 +56,7 @@ Projet : ${message}`;
     document.getElementById("status").innerText = "❌ Envoi annulé";
   }
 });
-/*
+
 function choisirOffre(offre) {
   document.getElementById("service").value = "Offre " + offre;
 
@@ -65,7 +65,7 @@ function choisirOffre(offre) {
     behavior: "smooth"
   });
 }
-*/
+
 const title = document.querySelector("h1");
 const text = title.innerText;
 title.innerText = "";
