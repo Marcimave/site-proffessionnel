@@ -60,32 +60,35 @@ footer {
 }
 
 .contact {
-  background: #0b1220;
+  background: #111827;
   padding: 60px 20px;
+  text-align: center;
 }
 
 form {
+  max-width: 400px;
+  margin: auto;
   display: flex;
   flex-direction: column;
   gap: 15px;
-  max-width: 400px;
-  margin: auto;
 }
 
 input, textarea {
   padding: 12px;
   border-radius: 8px;
   border: none;
+  font-size: 14px;
 }
 
 button {
   padding: 15px;
   background: #25D366;
-  border: none;
   color: white;
-  font-weight: bold;
+  border: none;
   border-radius: 8px;
+  font-weight: bold;
   cursor: pointer;
+  transition: 0.3s;
 }
 
 button:hover {
