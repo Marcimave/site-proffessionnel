@@ -18,6 +18,32 @@ Projet : ${message}`;
 
   const url = "https://wa.me/" + phone + "?text=" + encodeURIComponent(texte);
 
+const title = document.querySelector("h1");
+const text = title.textContent;
+
+title.innerHTML = "";
+
+let i = 0;
+
+function typing() {
+  if (i < text.length) {
+    const span = document.createElement("span");
+    span.textContent = text[i];
+
+    // garde les espaces visibles
+    if (text[i] === " ") {
+      span.innerHTML = "&nbsp;";
+    }
+
+    title.appendChild(span);
+    i++;
+    setTimeout(typing, 40);
+  }
+}
+
+typing();
+
+
   // Confirmation avant ouverture
   const confirmation = confirm("Vous allez être redirigé vers WhatsApp. Continuer ?");
 
