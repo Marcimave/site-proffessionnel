@@ -1,84 +1,60 @@
 body {
   margin: 0;
-  font-family: 'Arial', sans-serif;
+  font-family: Arial;
   background: #0f172a;
   color: white;
-}
-
-/* HEADER */
-header {
-  padding: 80px 20px;
   text-align: center;
-  background: linear-gradient(135deg, #2563eb, #7c3aed);
-}
-
-header h1 {
-  font-size: 40px;
-  margin-bottom: 10px;
-}
-
-header p {
-  font-size: 18px;
-  opacity: 0.9;
 }
 
 /* HERO */
 .hero {
+  padding: 100px 20px;
+  background: linear-gradient(135deg, #2563eb, #7c3aed);
+}
+
+.hero h1 {
+  font-size: 40px;
+}
+
+/* SECTIONS */
+section {
   padding: 60px 20px;
-  text-align: center;
 }
 
-.hero h2 {
-  font-size: 30px;
-}
-
-.hero p {
-  opacity: 0.8;
-  margin-bottom: 20px;
-}
+.problem { background: #111827; }
+.solution { background: #0b1220; }
+.offre { background: #111827; }
+.prix { background: #0b1220; }
+.contact { background: #1e293b; }
 
 /* BUTTON */
 .btn {
   display: inline-block;
+  margin-top: 20px;
   padding: 15px 30px;
   background: #22c55e;
   color: white;
   text-decoration: none;
   border-radius: 10px;
   font-weight: bold;
-  transition: 0.3s;
 }
 
 .btn:hover {
   background: #16a34a;
-  transform: scale(1.05);
 }
 
-/* SERVICES */
-.services {
-  background: #1e293b;
-  padding: 60px 20px;
-  text-align: center;
-}
-
-.services h2 {
-  margin-bottom: 20px;
-}
-
-.services ul {
+/* LISTE */
+ul {
   list-style: none;
   padding: 0;
 }
 
-.services li {
+li {
   padding: 10px;
-  font-size: 18px;
 }
 
 /* FOOTER */
 footer {
-  text-align: center;
   padding: 20px;
-  background: #0b1220;
-  font-size: 14px;
+  background: black;
 }
