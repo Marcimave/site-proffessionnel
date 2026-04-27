@@ -67,3 +67,30 @@ document.querySelectorAll("section").forEach(el => {
   el.classList.add("hidden");
   observer.observe(el);
 });
+
+let time = 24 * 60 * 60;
+
+function updateTimer() {
+  let hours = Math.floor(time / 3600);
+  let minutes = Math.floor((time % 3600) / 60);
+  let seconds = time % 60;
+
+  document.getElementById("timer").innerText =
+    `${hours.toString().padStart(2,'0')}:${minutes.toString().padStart(2,'0')}:${seconds.toString().padStart(2,'0')}`;
+
+  time--;
+}
+
+setInterval(updateTimer, 1000);
+
+const items = document.querySelectorAll(".testimonial, .card, section");
+
+window.addEventListener("scroll", () => {
+  items.forEach(el => {
+    const pos = el.getBoundingClientRect().top;
+    if (pos < window.innerHeight - 100) {
+      el.style.opacity = 1;
+      el.style.transform = "translateY(0)";
+    }
+  });
+});
