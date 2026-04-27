@@ -102,8 +102,8 @@ button:hover {
 
 .pricing {
   padding: 60px 20px;
-  text-align: center;
   background: #0b1220;
+  text-align: center;
 }
 
 .cards {
@@ -116,18 +116,19 @@ button:hover {
 .card {
   background: #1e293b;
   padding: 20px;
-  border-radius: 15px;
+  border-radius: 10px;
   width: 250px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
 .card h3 {
-  margin-bottom: 10px;
+  font-size: 22px;
 }
 
 .price {
-  color: #22c55e;
+  font-size: 24px;
   font-weight: bold;
+  margin: 10px 0;
 }
 
 .card ul {
@@ -141,8 +142,7 @@ button:hover {
 
 .card button {
   margin-top: 15px;
-  padding: 10px;
-  width: 100%;
+  padding: 10px 20px;
   background: #22c55e;
   border: none;
   color: white;

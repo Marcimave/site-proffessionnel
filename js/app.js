@@ -31,11 +31,12 @@ Projet : ${message}`;
 });
 
 function choisirOffre(offre) {
-  const message = `Bonjour, je suis intéressé par l'offre ${offre}.`;
+  document.getElementById("service").value = "Offre " + offre;
 
-  const phone = "241061234567"; // 🔴 ton numéro
-
-  const url = "https://wa.me/" + phone + "?text=" + encodeURIComponent(message);
-
-  window.open(url, "_blank");
+  // scroll automatique vers formulaire
+  document.querySelector(".contact").scrollIntoView({
+    behavior: "smooth"
+  });
 }
+
+
