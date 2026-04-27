@@ -39,4 +39,31 @@ function choisirOffre(offre) {
   });
 }
 
+const title = document.querySelector("h1");
+const text = title.innerText;
+title.innerText = "";
 
+let i = 0;
+
+function typing() {
+  if (i < text.length) {
+    title.innerText += text.charAt(i);
+    i++;
+    setTimeout(typing, 40);
+  }
+}
+
+typing();
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("show");
+    }
+  });
+});
+
+document.querySelectorAll("section").forEach(el => {
+  el.classList.add("hidden");
+  observer.observe(el);
+});
