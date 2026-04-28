@@ -48,7 +48,7 @@ function choisirOffre(offre) {
 
 let i = 0;
 
-function typing() {
+/*  function typing() {
   if (i < text.length) {
     title.innerText += text.charAt(i);
     i++;
@@ -58,6 +58,27 @@ function typing() {
 }
 
 typing();
+         */
+
+const title = document.querySelector(".netflix-title");
+
+if (title) {
+  const text = title.textContent;
+  title.textContent = "";
+
+  let i = 0;
+
+  function typing() {
+    if (i < text.length) {
+      title.textContent += text[i];
+      i++;
+      setTimeout(typing, 50);
+    }
+  }
+
+  typing();
+}
+
 
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
@@ -72,6 +93,7 @@ document.querySelectorAll("section").forEach(el => {
   observer.observe(el);
 });
 
+/*
 let time = 24 * 60 * 60;
 
 function updateTimer() {
@@ -86,6 +108,30 @@ function updateTimer() {
 }
 
 setInterval(updateTimer, 1000);
+                                  */
+
+
+let time = 24 * 60 * 60;
+
+function updateTimer() {
+  const timer = document.getElementById("timer");
+
+  if (!timer) return;
+
+  let hours = Math.floor(time / 3600);
+  let minutes = Math.floor((time % 3600) / 60);
+  let seconds = time % 60;
+
+  timer.textContent =
+    `${String(hours).padStart(2,'0')}:` +
+    `${String(minutes).padStart(2,'0')}:` +
+    `${String(seconds).padStart(2,'0')}`;
+
+  if (time > 0) time--;
+}
+
+setInterval(updateTimer, 1000);
+
 
 const items = document.querySelectorAll(".testimonial, .card, section");
 
