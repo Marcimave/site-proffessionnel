@@ -37,6 +37,28 @@ body::before {
   border-radius: 12px;
 }
 
+.hero {
+  position: relative;
+  padding: 80px 20px;
+  color: white;
+
+  /* DOUBLE IMAGE + OVERLAY */
+  background:
+    linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)),
+    url("../images/Img_1.webp") center/cover no-repeat;
+
+}
+
+.hero {
+  animation: zoomHero 4s ease;
+}
+
+@keyframes zoomHero {
+  from { transform: scale(1.1); }
+  to { transform: scale(1); }
+}
+
+
 /* TITRE CINÉMA (FIX BUG ESPACES) */
 .netflix-title {
   font-size: 32px;
@@ -185,6 +207,16 @@ li {
   transform: scale(1.05);
 }
 
+.cta {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.btn-cta {
+  display: inline-block;
+  margin-top: 20px;
+}
+
 /* FORM */
 form {
   max-width: 400px;
@@ -250,6 +282,16 @@ footer {
 .netflix-title span:nth-child(5) { animation-delay: 1s; }
 .netflix-title span:nth-child(6) { animation-delay: 1.2s; }
 .netflix-title span:nth-child(7) { animation-delay: 1.4s; }
+
+.netflix-title span {
+  opacity: 0;
+  animation: wordReveal 0.8s ease forwards;
+}
+
+.netflix-title {
+  opacity: 1;
+}
+
 
 /* ANIMATION PRINCIPALE */
 @keyframes wordReveal {
