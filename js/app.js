@@ -25,6 +25,7 @@ title.innerHTML = "";
 
 let i = 0;
 
+/*
 function typing() {
   if (i < text.length) {
     const span = document.createElement("span");
@@ -42,7 +43,7 @@ function typing() {
 }
 
 typing();
-
+*/
 
   // Confirmation avant ouverture
   const confirmation = confirm("Vous allez être redirigé vers WhatsApp. Continuer ?");
@@ -77,6 +78,16 @@ function typing() {
     title.innerText += text.charAt(i);
     i++;
     setTimeout(typing, 40);
+
+// garde les espaces visibles
+    if (text[i] === " ") {
+      span.innerHTML = "&nbsp;";
+    }
+
+    title.appendChild(span);
+    i++;
+    setTimeout(typing, 40);
+
   }
 }
 
