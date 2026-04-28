@@ -79,15 +79,6 @@ function typing() {
     i++;
     setTimeout(typing, 40);
 
-// garde les espaces visibles
-    if (text[i] === " ") {
-      span.innerHTML = "&nbsp;";
-    }
-
-    title.appendChild(span);
-    i++;
-    setTimeout(typing, 40);
-
   }
 }
 
