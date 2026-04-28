@@ -1,67 +1,188 @@
-/* TIMER */
-let time = 24 * 60 * 60;
-
-function updateTimer() {
-  const timer = document.getElementById("timer");
-  if (!timer) return;
-
-  let h = Math.floor(time / 3600);
-  let m = Math.floor((time % 3600) / 60);
-  let s = time % 60;
-
-  timer.textContent =
-    `${String(h).padStart(2,'0')}:` +
-    `${String(m).padStart(2,'0')}:` +
-    `${String(s).padStart(2,'0')}`;
-
-  if (time > 0) time--;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-setInterval(updateTimer, 1000);
-updateTimer();
-
-/* WHATSAPP */
-function payerWhatsApp(offre, prix) {
-
-  const phone = "241065158925";
-
-  const message =
-`🚀 COMMANDE SITE WEB
-
-📦 Offre : ${offre}
-💰 Prix : ${prix} FCFA
-
-💬 Paiement : Airtel Money / Moov Money
-
-Nom :
-Détails :`;
-
-  const url = "https://wa.me/" + phone + "?text=" + encodeURIComponent(message);
-
-  window.open(url, "_blank");
+body {
+  font-family: Arial;
+  background: #0b0b0f;
+  color: white;
+  text-align: center;
 }
 
-/* FORMULAIRE */
-document.addEventListener("DOMContentLoaded", function () {
+/* HERO */
+.hero {
+  position: relative;
+  padding: 100px 20px;
+  color: white;
 
-  const form = document.getElementById("contactForm");
+  background:
+    linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)),
+    url("../images/Img_1.webp");
 
-  if (form) {
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
+  background-size: cover;
+  background-position: center;
+}
 
-      const nom = document.getElementById("nom").value;
-      const service = document.getElementById("service").value;
-      const message = document.getElementById("message").value;
+/* IMAGE AU-DESSUS (2e écran) */
+.hero-img {
+  width: 90%;
+  max-width: 500px;
+  display: block;
+  margin: 20px auto;
+  border-radius: 12px;
+  position: relative;
+  z-index: 2;
+}
 
-      const text =
-`Nom: ${nom}
-Service: ${service}
-Projet: ${message}`;
+/* TITRE */
+.netflix-title {
+  font-size: 32px;
+  max-width: 90%;
+  margin: auto;
+  line-height: 1.4;
+  animation: fadeIn 2s ease;
+}
 
-      const url = "https://wa.me/241065158925?text=" + encodeURIComponent(text);
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(1.2); }
+  to { opacity: 1; transform: scale(1); }
+}
 
-      window.open(url, "_blank");
-    });
-  }
-});
+section {
+  padding: 60px 20px;
+}
+
+.problem { background: #111827; }
+.solution { background: #0b1220; }
+.offre { background: #111827; }
+.prix { background: #0b1220; }
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.card {
+  background: #1e293b;
+  padding: 20px;
+  border-radius: 10px;
+  width: 260px;
+}
+
+.popular {
+  border: 2px solid #22c55e;
+}
+
+button {
+  padding: 10px;
+  background: #22c55e;
+  border: none;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #16a34a;
+}
+
+.badge-limite {
+  background: red;
+  padding: 5px 10px;
+  border-radius: 20px;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0.5; }
+}
+
+.stock {
+  color: red;
+  font-weight: bold;
+  animation: blink 1s infinite;
+}
+
+.cta {
+  padding: 40px;
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 25px;
+  background: #22c55e;
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+form {
+  max-width: 500px;
+  margin: 30px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 14px;
+  border-radius: 8px;
+  border: none;
+  font-size: 14px;
+}
+
+textarea {
+  min-height: 100px;
+  resize: none;
+}
+
+form button {
+  width: 100%;
+  padding: 14px;
+  background: #25D366;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+form button:hover {
+  background: #1ebe5d;
+}
+
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25D366;
+  padding: 15px;
+  border-radius: 50%;
+  color: white;
+  text-decoration: none;
+}
+/* SUPRESSION POINTS*/
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+li {
+  list-style: none;
+}
+/* whatsapp float */
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25D366;
+  padding: 15px;
+  border-radius: 50%;
+  z-index: 1000;
+}
