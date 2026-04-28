@@ -12,18 +12,15 @@ document.getElementById("contactForm").addEventListener("submit", function(e) {
     return;
   }
 
+
+
   const texte = `Bonjour, je m'appelle ${nom}.
 Je souhaite : ${service}.
 Projet : ${message}`;
 
   const url = "https://wa.me/" + phone + "?text=" + encodeURIComponent(texte);
 
-const title = document.querySelector("h1");
-const text = title.textContent;
 
-title.innerHTML = "";
-
-let i = 0;
 
   // Confirmation avant ouverture
   const confirmation = confirm("Vous allez être redirigé vers WhatsApp. Continuer ?");
@@ -47,9 +44,7 @@ function choisirOffre(offre) {
   });
 }
 
-const title = document.querySelector("h1");
-const text = title.innerText;
-title.innerText = "";
+
 
 let i = 0;
 
