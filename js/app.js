@@ -60,24 +60,8 @@ let i = 0;
 typing();
          */
 
-const title = document.querySelector(".netflix-title");
-
-if (title) {
-  const text = title.textContent;
-  title.textContent = "";
-
-  let i = 0;
-
-  function typing() {
-    if (i < text.length) {
-      title.textContent += text[i];
-      i++;
-      setTimeout(typing, 50);
-    }
-  }
-
-  typing();
-}
+updateTimer(); // 🔥 LANCE IMMÉDIATEMENT
+setInterval(updateTimer, 1000);
 
 
 const observer = new IntersectionObserver(entries => {
