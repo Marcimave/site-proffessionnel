@@ -38,35 +38,33 @@ Besoin spécifique :
 
 */
 
-function payerWhatsApp(offre, prix) {
+let time = 24 * 60 * 60;
 
-  const phone = "241065158925";
+function updateTimer() {
 
-  const message = `Bonjour 👋
-Je souhaite commander l'offre *${offre}*.
+  const timer = document.getElementById("timer");
+  if (!timer) return;
 
-💰 Prix : ${prix} FCFA
+  let h = Math.floor(time / 3600);
+  let m = Math.floor((time % 3600) / 60);
+  let s = time % 60;
 
-Comment puis-je effectuer le paiement (Airtel Money / Moov Money) ?
+  timer.textContent =
+    `${String(h).padStart(2,'0')}:` +
+    `${String(m).padStart(2,'0')}:` +
+    `${String(s).padStart(2,'0')}`;
 
-Nom : 
-Délai souhaité :`;
-
-  const url = "https://wa.me/" + phone + "?text=" + encodeURIComponent(message);
-
-  window.open(url, "_blank");
+  if (time > 0) time--;
 }
 
-  const texte = `Bonjour, je m'appelle ${nom}.
-Je souhaite : ${service}.
-Projet : ${message}`;
+setInterval(updateTimer, 1000);
 
-  const url = "https://wa.me/" + phone + "?text=" + encodeURIComponent(texte);
-
+updateTimer(); // 🔥 LANCE IMMÉDIATEMENT
+setInterval(updateTimer, 1000);
 
 
   // Confirmation avant ouverture
-  const confirmation = confirm("Vous allez être redirigé vers WhatsApp. Continuer ?");
+ /* const confirmation = confirm("Vous allez être redirigé vers WhatsApp. Continuer ?");
 
   if (confirmation) {
     window.open(url, "_blank");
@@ -76,7 +74,7 @@ Projet : ${message}`;
   } else {
     document.getElementById("status").innerText = "❌ Envoi annulé";
   }
-});
+});*/
 
 function choisirOffre(offre) {
   document.getElementById("service").value = "Offre " + offre;
@@ -102,9 +100,6 @@ let i = 0;
 
 typing();
          */
-
-updateTimer(); // 🔥 LANCE IMMÉDIATEMENT
-setInterval(updateTimer, 1000);
 
 
 const observer = new IntersectionObserver(entries => {
@@ -138,26 +133,51 @@ setInterval(updateTimer, 1000);
                                   */
 
 
-let time = 24 * 60 * 60;
+const phone = "241065158925";
 
-function updateTimer() {
-  const timer = document.getElementById("timer");
+/* ---------------- WHATSAPP OFFRES ---------------- */
+function payerWhatsApp(offre, prix) {
 
-  if (!timer) return;
+  const message =
+`🚀 COMMANDE SITE WEB
 
-  let hours = Math.floor(time / 3600);
-  let minutes = Math.floor((time % 3600) / 60);
-  let seconds = time % 60;
+📦 Offre : ${offre}
+💰 Prix : ${prix} FCFA
 
-  timer.textContent =
-    `${String(hours).padStart(2,'0')}:` +
-    `${String(minutes).padStart(2,'0')}:` +
-    `${String(seconds).padStart(2,'0')}`;
+💬 Paiement : Airtel Money / Moov Money
 
-  if (time > 0) time--;
+Nom :
+Détails :`;
+
+  const url = "https://wa.me/" + phone + "?text=" + encodeURIComponent(message);
+
+  window.open(url, "_blank");
 }
 
-setInterval(updateTimer, 1000);
+/* ---------------- FORMULAIRE ---------------- */
+document.addEventListener("DOMContentLoaded", function () {
+
+  const form = document.getElementById("contactForm");
+
+  if (form) {
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const nom = document.getElementById("nom").value;
+      const service = document.getElementById("service").value;
+      const message = document.getElementById("message").value;
+
+      const text =
+`Bonjour, je m'appelle ${nom}
+Service : ${service}
+Projet : ${message}`;
+
+      const url = "https://wa.me/" + phone + "?text=" + encodeURIComponent(text);
+
+      window.open(url, "_blank");
+    });
+  }
+});
 
 
 const items = document.querySelectorAll(".testimonial, .card, section");

@@ -25,7 +25,26 @@ body::before {
 }
 
 /* HERO */
+
 .hero {
+  position: relative;
+  padding: 80px 20px;
+  color: white;
+
+  background:
+    linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)),
+    url("../images/Img_1.webp") center/cover no-repeat;
+
+  animation: zoomHero 4s ease;
+}
+
+@keyframes zoomHero {
+  from { transform: scale(1.1); }
+  to { transform: scale(1); }
+}
+
+
+/* .hero {
   padding: 60px 20px;
   animation: fadeIn 1.5s ease;
 }
@@ -35,20 +54,20 @@ body::before {
   max-width: 400px;
   margin: 0 auto 20px;
   border-radius: 12px;
-}
-
+}*/
+/*
 .hero {
   position: relative;
   padding: 80px 20px;
   color: white;
-
+*/
   /* DOUBLE IMAGE + OVERLAY */
-  background:
+ /* background:
     linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)),
     url("../images/Img_1.webp") center/cover no-repeat;
 
-}
-
+} */
+/*
 .hero {
   animation: zoomHero 4s ease;
 }
@@ -57,7 +76,7 @@ body::before {
   from { transform: scale(1.1); }
   to { transform: scale(1); }
 }
-
+*/
 
 /* TITRE CINÉMA (FIX BUG ESPACES) */
 .netflix-title {
