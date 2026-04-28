@@ -10,7 +10,7 @@ document.getElementById("contactForm").addEventListener("submit", function(e) {
   if (!nom || !service) {
     alert("Veuillez remplir les champs obligatoires !");
     return;
-*/  
+
 }
 
 function goWA(offre, prix) {
@@ -36,6 +36,26 @@ Besoin spécifique :
   window.open(url, "_blank");
 }
 
+*/
+
+function payerWhatsApp(offre, prix) {
+
+  const phone = "241065158925";
+
+  const message = `Bonjour 👋
+Je souhaite commander l'offre *${offre}*.
+
+💰 Prix : ${prix} FCFA
+
+Comment puis-je effectuer le paiement (Airtel Money / Moov Money) ?
+
+Nom : 
+Délai souhaité :`;
+
+  const url = "https://wa.me/" + phone + "?text=" + encodeURIComponent(message);
+
+  window.open(url, "_blank");
+}
 
   const texte = `Bonjour, je m'appelle ${nom}.
 Je souhaite : ${service}.
