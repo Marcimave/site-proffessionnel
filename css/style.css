@@ -388,3 +388,26 @@ body::after {
   100% { opacity: 1; }
 }
 
+.hero {
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+}
+
+.netlfix-title {
+  font-size: 38px;
+  letter-spacing: 2px;
+  animation: fadeIn 2s ease;
+}
+
+.card {
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.cta {
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  padding: 50px;
+  border-radius: 15px;
+}

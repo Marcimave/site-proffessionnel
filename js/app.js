@@ -5,13 +5,36 @@ document.getElementById("contactForm").addEventListener("submit", function(e) {
   const nom = document.getElementById("nom").value.trim();
   const service = document.getElementById("service").value.trim();
   const message = document.getElementById("message").value.trim();
-
+/*
   const phone = "241065158925";
   if (!nom || !service) {
     alert("Veuillez remplir les champs obligatoires !");
     return;
-  }
+*/  
+}
 
+function goWA(offre, prix) {
+
+  const phone = "241065158925";
+
+  const message =
+`🚀 DEMANDE DE SITE WEB - AGENCE PREMIUM
+
+📦 Offre : ${offre}
+💰 Prix : ${prix} FCFA
+
+🎯 Objectif : attirer des clients automatiquement
+
+Nom :
+Activité :
+Besoin spécifique :
+
+💡 Paiement : Airtel Money / Moov Money / Cash`;
+
+  const url = "https://wa.me/" + phone + "?text=" + encodeURIComponent(message);
+
+  window.open(url, "_blank");
+}
 
 
   const texte = `Bonjour, je m'appelle ${nom}.

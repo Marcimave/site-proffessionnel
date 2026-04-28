@@ -9,7 +9,7 @@
 </head>
 
 <body>
- 
+<!-- 
 <header class="hero">
   <div class="overlay"></div>
 
@@ -29,18 +29,56 @@
     <p>Un site moderne qui attire des clients et vend pour toi</p>
     <a href="#offres" class="btn">Demander mon site</a>
   </div>
+</header>  -->
+
+<header class="hero">
+  <div class="overlay"></div>
+
+  <div class="hero-content">
+
+    <img src="images/Img_1.webp" class="hero-img">
+
+    <h1 class="netflix-title">
+      🚀 Je transforme ton activité en machine à clients
+    </h1>
+
+    <p>
+      Site web professionnel + stratégie WhatsApp = plus de clients automatiquement
+    </p>
+
+    <a href="#offres" class="btn">Voir les offres</a>
+  </div>
 </header>
 
+<!--
 <section class="problem">
   <h2>❌ Ton problème actuel</h2>
   <p>Tu n’as pas de site ou ton site ne te rapporte rien.</p>
 </section>
+           -->
+<section class="problem">
+  <h2>❌ Pourquoi tu n’as pas encore de clients en ligne</h2>
+  <p>
+    Ton activité n’est pas visible ou ton site ne convertit pas les visiteurs en clients.
+  </p>
+</section>
 
+
+<!--
 <section class="solution">
   <h2>✅ Ma solution</h2>
   <p>Je crée pour toi un site moderne, rapide et optimisé pour vendre tes services.</p>
 </section>
+-->
 
+<section class="solution">
+  <h2>💡 Ce que tu obtiens réellement</h2>
+  <p>
+    Un site qui ne sert pas juste à afficher, mais à vendre pour toi 24h/24.
+  </p>
+</section>
+
+<!--
 <section class="offre">
   <h2>🔥 Ce que tu reçois</h2>
   <ul>
@@ -50,7 +88,9 @@
     <li>✔ Livraison rapide</li>
   </ul>
 </section>
+-->
 
+<!--
 <section class="testimonials">
   <h2>💬 Ce que disent mes clients</h2>
 
@@ -67,18 +107,25 @@
   </div>
 </section>
 
+-->
+
+<!--
 <section class="prix">
   <h2>💰 Offre spéciale</h2>
   <p><strong>Site complet à prix accessible</strong></p>
 </section>
 
+-->
+
+
+<!--
 <section class="pricing" id="offres">
   <h2>💰 Mes offres</h2>
 
   <div class="cards">
 
     <!-- BASIC -->
-    <div class="card">
+ <!--   <div class="card">
       <h3>Basic</h3>
       <p class="price">50 000 FCFA</p>
       <ul>
@@ -88,9 +135,9 @@
       </ul>
       <button onclick="choisirOffre('Basic')">Choisir</button>
     </div>
-
+-->
     <!-- PRO -->
-    <div class="card popular">
+<!--  <div class="card popular">
       <h3>Pro</h3>
       <p class="price">100 000 FCFA</p>
       <ul>
@@ -100,9 +147,11 @@
       </ul>
       <button onclick="choisirOffre('Pro')">Choisir</button>
     </div>
+-->
+
 
     <!-- PREMIUM -->
-    <div class="card">
+<!-- <div class="card">
       <h3>Premium</h3>
       <p class="price">200 000 FCFA</p>
       <ul>
@@ -117,6 +166,54 @@
   </div>
 </section>
 
+-->
+
+<section id="offres" class="pricing">
+
+  <h2>💰 Choisis ton pack</h2>
+
+  <div class="cards">
+
+    <!-- BASIC -->
+    <div class="card">
+      <h3>Basic</h3>
+      <p class="price">50 000 FCFA</p>
+      <ul>
+        <li>✔ 1 page professionnelle</li>
+        <li>✔ Design moderne</li>
+        <li>✔ WhatsApp intégré</li>
+      </ul>
+      <button onclick="goWA('Basic', 50000)">Choisir</button>
+    </div>
+
+    <!-- PRO -->
+    <div class="card popular">
+      <h3>Pro</h3>
+      <p class="price">100 000 FCFA</p>
+      <ul>
+        <li>✔ 3 à 5 pages</li>
+        <li>✔ Design premium</li>
+        <li>✔ Optimisation conversion</li>
+      </ul>
+      <button onclick="goWA('Pro', 100000)">Choisir</button>
+    </div>
+
+    <!-- PREMIUM -->
+    <div class="card">
+      <h3>Premium</h3>
+      <p class="price">200 000 FCFA</p>
+      <ul>
+        <li>✔ Site complet business</li>
+        <li>✔ Tunnel de vente intégré</li>
+        <li>✔ Paiement + automatisation</li>
+      </ul>
+      <button onclick="goWA('Premium', 200000)">Choisir</button>
+    </div>
+
+  </div>
+</section>
+
+<!--
 <section class="cta">
   <span class="badge-limite">⚡ Offre limitée</span>
   <h2>🔥 Commandez maintenant</h2>
@@ -130,6 +227,20 @@
 
   <a href="#contact" class="btn-cta">Je commande mon site</a>
 </section>
+-->
+<section class="cta">
+  <span class="badge-limite">⚡ Places limitées</span>
+
+  <h2>🔥 Ne perds pas des clients chaque jour</h2>
+
+  <p class="stock">⚠️ Seulement 3 clients acceptés cette semaine</p>
+
+  <p>⏳ Offre expire dans : <span id="timer">24:00:00</span></p>
+
+  <a href="#offres" class="btn">Je commande maintenant</a>
+</section>
+
+
 
 <section class="contact" id="contact">
   <form id="contactForm">
