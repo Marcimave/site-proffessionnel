@@ -20,6 +20,67 @@ function updateTimer() {
 setInterval(updateTimer, 1000);
 updateTimer();
 
+/* FORMULAIRE EMAIL */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+  const form = document.getElementById("contactForm");
+
+  if (form) {
+
+    form.addEventListener("submit", function (e) {
+
+      e.preventDefault();
+
+      const nom =
+      document.getElementById("nom").value;
+
+      const email =
+      document.getElementById("email").value;
+
+      const service =
+      document.getElementById("service").value;
+
+      const message =
+      document.getElementById("message").value;
+
+      const status =
+      document.getElementById("status");
+
+      emailjs.send(
+        "service_icixjxf",
+        "template_kwa4moh",
+        {
+           name: nom,
+    email: email,
+    title: service,
+    message: message
+        }
+      )
+
+      .then(function () {
+
+        status.textContent =
+        "✅ Demande envoyée avec succès.";
+
+        form.reset();
+      })
+
+      .catch(function (error) {
+
+        status.textContent =
+        "❌ Erreur lors de l’envoi.";
+
+        console.error(error);
+      });
+
+    });
+
+  }
+
+});
+
+
 /* WHATSAPP */
 function payerWhatsApp(offre, prix) {
 
@@ -42,7 +103,7 @@ Détails :`;
 }
 
 /* FORMULAIRE */
-document.addEventListener("DOMContentLoaded", function () {
+/* document.addEventListener("DOMContentLoaded", function () {
 
   const form = document.getElementById("contactForm");
 
@@ -64,4 +125,4 @@ Projet: ${message}`;
       window.open(url, "_blank");
     });
   }
-});
+}); */
