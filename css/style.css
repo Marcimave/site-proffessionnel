@@ -184,5 +184,5 @@ li {
   background: #25D366;
   padding: 15px;
   border-radius: 50%;
-  z-index: 1000;
+  z-index: 999999; /* 🔥 IMPORTANT */
 }
