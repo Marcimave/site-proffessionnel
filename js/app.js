@@ -126,3 +126,20 @@ Projet: ${message}`;
     });
   }
 }); */
+// ==========================
+// FIX CLAVIER MOBILE (SCROLL)
+// ==========================
+document.querySelectorAll("input, textarea").forEach((el) => {
+
+  el.addEventListener("focus", () => {
+
+    setTimeout(() => {
+      el.scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+      });
+    }, 300);
+
+  });
+
+});
