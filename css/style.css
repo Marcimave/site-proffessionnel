@@ -186,3 +186,22 @@ li {
   border-radius: 50%;
   z-index: 999999; /* 🔥 IMPORTANT */
 }
+/* FIX CLAVIER MOBILE */
+.contact {
+  padding-bottom: 150px;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  overflow-y: auto;
+}
+
+/* FIX MODERNE MOBILE */
+@supports (height: 100dvh) {
+  body {
+    min-height: 100dvh;
+  }
+}
