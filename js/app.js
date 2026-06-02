@@ -143,3 +143,25 @@ document.querySelectorAll("input, textarea").forEach((el) => {
   });
 
 });
+
+// ==========================
+// SELECTION PACK (ANIMATION)
+// ==========================
+
+const cards = document.querySelectorAll(".selectable");
+
+cards.forEach(card => {
+
+  card.addEventListener("click", (e) => {
+
+    e.stopPropagation();
+
+    // enlever sur toutes
+    cards.forEach(c => c.classList.remove("popular"));
+
+    // ajouter sur celle cliquée
+    card.classList.add("popular");
+
+  });
+
+});
